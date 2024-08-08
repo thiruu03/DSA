@@ -11,7 +11,7 @@ class Node {
 
 }
 
-class InorderTraversal{
+class Traversal{
     public static void inorderTraversal(Node node){
         if(node == null){
             return;
@@ -54,12 +54,12 @@ class InorderTraversal{
         root.right.right.left = new Node(9);
         root.right.right.right = new Node(10);
         System.out.print("Inorder: ");
-        inorderTraversal(root);
+        Traversal.inorderTraversal(root);
         System.out.println();
         System.out.print("Preorder: ");
-        PreorderTraversal(root);
+        Traversal.PreorderTraversal(root);
         System.out.println();
         System.out.print("postorder: ");
-        PostorderTraversal(root);
+        Traversal.PostorderTraversal(root);
     }
 }
