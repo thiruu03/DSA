@@ -1,4 +1,4 @@
-public class tree{
+ class tree{
     public int data;
     tree left,right;
 
