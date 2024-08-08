@@ -1,3 +1,5 @@
+// 1.Input a year and find whether it is a leap year or not.
+
 import java.util.Scanner;
 class Leap_year{
     public static void main(String[] args) {

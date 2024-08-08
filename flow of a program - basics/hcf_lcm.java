@@ -1,3 +1,5 @@
+//4.Take 2 numbers as inputs and find their HCF and LCM.
+
 import java.util.Scanner;
 // public class hcf_lcm {
 //     public static void main(String[] args) {
