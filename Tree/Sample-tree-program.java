@@ -1,60 +1,51 @@
- class tree{
-    public int data;
-    tree left,right;
+class Node {  
+    // Step 1: initialization
+    public int value;  
+    public Node left, right;  
+    // step 2: constructor
+    public Node(int element)  
+    {  
+        value = element;  
+        left = right = null;  
+    }  
+}  
 
-    public tree(int value) {
-        data = value;
-        left = right = null;
-    }
-}
-
-class Traversal{
-    public static void inorder(tree node){
-        if(node == null){
-            return;
+class PreorderTraversal {  
+    // object for Node class
+    Node root;  
+    PreorderTraversal() { 
+        root = null; 
+    }  
+  
+    void traversePreorder(Node node){  
+        if (node == null){  
+            return;  
         }
-        inorder(node.left);
-        System.out.print(node.data+" ");
-        inorder(node.right);
-    }
-
-    public static void preorder(tree node){
-        if(node == null){
-            return;
-        }
-        
-        System.out.print(node.data+" ");
-        preorder(node.left);
-        preorder(node.right);
-    }
-
-    public static void postorder(tree node){
-        if(node == null){
-            return;
-        }
-        postorder(node.left);
-        postorder(node.right);
-        System.out.print(node.data+" ");
-    }
-
-
-    public static void main(String[] args) {
-        tree root = new tree(4);
-        root.left = new tree(2);
-        root.right = new tree(5);
-        root.left.left = new tree(3);
-        root.right.left = new tree(7);
-        root.right.right = new tree(6);
-        root.left.left.right = new tree(9);
-        root.right.right.left = new tree(8);
-        root.left.left.right.left = new tree(1);
-        Traversal.inorder(root);
-        System.out.println();
-        Traversal.preorder(root);
-        System.out.println();
-        Traversal.postorder(root);
-
-    }
-
-
+        System.out.print(node.value + " ");  
+        traversePreorder(node.left);  
+        traversePreorder(node.right);  
+    }  
+  
+    void traversePreorder() { traversePreorder(root); }  
+  
+    public static void main(String args[])  
+    {  
+        PreorderTraversal pt = new PreorderTraversal();  
+        pt.root = new Node(37);  
+        pt.root.left = new Node(27);  
+        pt.root.right = new Node(47);  
+        pt.root.left.left = new Node(22);  
+        pt.root.left.right = new Node(32);  
+        pt.root.left.left.left = new Node(12);  
+        pt.root.left.left.right = new Node(25);  
+        pt.root.right.left = new Node(42);  
+        pt.root.right.right = new Node(57);  
+        pt.root.right.right.left = new Node(52);  
+        pt.root.right.right.right = new Node(67);  
+  
+        System.out.println();  
+        System.out.println("Preorder traversal of given binary tree is - ");  
+        pt.traversePreorder();  
+        System.out.println();  
+    }  
 }

@@ -53,10 +53,13 @@ class InorderTraversal{
         root.left.right.left = new Node(8);
         root.right.right.left = new Node(9);
         root.right.right.right = new Node(10);
-        InorderTraversal.inorderTraversal(root);
+        System.out.print("Inorder: ");
+        inorderTraversal(root);
         System.out.println();
-        InorderTraversal.PreorderTraversal(root);
+        System.out.print("Preorder: ");
+        PreorderTraversal(root);
         System.out.println();
-        InorderTraversal.PostorderTraversal(root);
+        System.out.print("postorder: ");
+        PostorderTraversal(root);
     }
 }
